@@ -39,23 +39,23 @@
         </thead>
         <tbody>
         [#list people as person]
-        <tr>
-            <td>${person?counter}</td>
-            <td>${person.givenName}</td>
-            <td>${person.lastName}</td>
-            <td>
-                [#if person.gender.name() == "Female"]
-                    <i class="bi bi-gender-female" role="img" aria-label="Female"></i>
-                [#elseif person.gender.name() == "Male"]
-                    <i class="bi bi-gender-male" role="img" aria-label="Male"></i>
-                [/#if]
-            </td>
-            <td>${person.birthDate.format('LONG_DATE')}</td>
-            <td>
-                <a href="/${person?index}" class="btn btn-secondary"><i class="bi bi-person-fill-gear" role="img" aria-label="Edit"></i></a>
-                <button type="submit" class="btn btn-secondary"><i class="bi bi-person-x-fill" role="img" aria-label="Delete"></i></button>
-            </td>
-        </tr>
+            <tr>
+                <td>${person?counter}</td>
+                <td>${person.givenName}</td>
+                <td>${person.lastName}</td>
+                <td>
+                    [#if person.gender.name() == "Female"]
+                        <i class="bi bi-gender-female" role="img" aria-label="Female"></i>
+                    [#elseif person.gender.name() == "Male"]
+                        <i class="bi bi-gender-male" role="img" aria-label="Male"></i>
+                    [/#if]
+                </td>
+                <td>${person.birthDate?date}</td>
+                <td>
+                    <a href="/${person?index}" class="btn btn-secondary"><i class="bi bi-person-fill-gear" role="img" aria-label="Edit"></i></a>
+                    <button type="submit" class="btn btn-secondary"><i class="bi bi-person-x-fill" role="img" aria-label="Delete"></i></button>
+                </td>
+            </tr>
         [/#list]
         </tbody>
     </table>

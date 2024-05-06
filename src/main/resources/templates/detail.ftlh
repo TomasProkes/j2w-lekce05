@@ -37,11 +37,11 @@
         </div>
         <div class="col-md-2">
             <label for="birth-date" class="form-label">Birth date</label>
-            <input id="birth-date" name="birthDate" class="form-control" type="date" value="${person.birthDate!}"/>
+            <input id="birth-date" name="birthDate" class="form-control" type="date" value="${person.birthDate!?date?iso_local}"/>
         </div>
         <div class="col-md-2">
             <label for="gender" class="form-label">Gender</label>
-            <select id="gender" name="gender" class="form-select"  value="${person.gender!}">
+            <select id="gender" name="gender" class="form-select" value="${person.gender!}">
                 [#list gender as item]
                     <option value="${item.name()}">${item.title}</option>
                 [/#list]
